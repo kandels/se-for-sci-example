@@ -8,7 +8,13 @@ on:
   workflow_dispatch:
 
 jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world"
+
   test:
+    needs: hello
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
