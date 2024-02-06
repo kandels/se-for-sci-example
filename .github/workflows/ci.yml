@@ -11,9 +11,9 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "my_var=some-value" >> $GITHUB_ENV
-      - run: echo ${my_var}
-      - run: echo ${{ env.my_var }}
+      - id: step1
+        run: echo "my_var=some-value" >> $GITHUB_OUTPUT
+      - run: echo ${{ steps.step1.outputs.my_var }}
       - run: echo "Hello world"
 
   test:
