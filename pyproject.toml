@@ -14,6 +14,12 @@ dependencies = [
 ]
 [project.optional-dependencies]
 test = ["pytest"]
+docs = [
+    "furo",  # Theme
+    "myst_parser >=0.13",  # Markdown
+    "sphinx >=4.0",
+    "sphinx_copybutton",  # Easy code copy button
+]
 
 
 [tool.mypy]

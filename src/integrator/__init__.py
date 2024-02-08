@@ -8,6 +8,37 @@ class IntegratorBase(abc.ABC):
         pass
 
     def integrate(self, f, t, init_y):
+        """Some description of the method.
+        
+        Some more description of the method.
+
+        .. math::
+           \int f(x) dx
+
+        Parameters
+        ----------
+        f : callable
+            The function to integrate. It must take two arguments: the current time and the current position.
+        t : array_like
+            The time steps at which to compute the solution.
+        init_y : float
+            The initial position.
+
+        Returns
+        -------
+        y : ndarray
+            The solution at each time step.
+
+        Examples
+        --------
+        >>> from integrator import EulerIntegrator
+        >>> def f(t, y):
+        ...     return -y
+        >>> t = np.linspace(0, 1, 11)
+        >>> init_y = 1
+        >>> integrator = EulerIntegrator()
+        >>> integrator.integrate(f, t, init_y)
+        """
         steps = len(t)
         order = len(init_y)  # Number of equations
 
