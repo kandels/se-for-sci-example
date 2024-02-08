@@ -38,4 +38,14 @@ jobs:
       - name: Run tests
         run: python -m pytest -v
 
+  test-containers:
+    runs-on: ubuntu-latest
+    container: ${{ matrix.distro }}
+    strategy:
+      matrix:
+        distro: ["debian", "archlinux"]
+    steps:
+      - run: cat /etc/os-release
+    
+
       
