@@ -44,6 +44,7 @@ jobs:
     strategy:
       matrix:
         distro: ["debian", "archlinux"]
+      fail-fast: false
     steps:
       - run: cat /etc/os-release
       - if: ${{ matrix.distro }} == 'archlinux'
