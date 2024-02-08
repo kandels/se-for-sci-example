@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
     steps:
       - run: cat /etc/os-release
-      - if: ${{ matrix.distro }} == 'archlinux'
+      - if: matrix.distro == 'archlinux'
         run: echo "This is Arch"
       - run: mkdir
       - run: echo "This will not run"
