@@ -46,6 +46,14 @@ jobs:
         distro: ["debian", "archlinux"]
     steps:
       - run: cat /etc/os-release
+      - if: ${{ matrix.distro }} == 'archlinux'
+        run: echo "This is Arch"
+      - run: mkdir
+      - run: echo "This will not run"
+      - if: failure()
+        run: echo "There was an error"
+        
+
     
 
       
