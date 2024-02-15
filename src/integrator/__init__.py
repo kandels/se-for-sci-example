@@ -9,7 +9,7 @@ class IntegratorBase(abc.ABC):
 
     def integrate(self, f, t, init_y):
         """Some description of the method.
-        
+
         Some more description of the method.
 
         .. math::
