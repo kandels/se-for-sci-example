@@ -1,6 +1,9 @@
-from integrator import EulerIntegrator, RK4Integrator
-from pytest import approx
+from __future__ import annotations
+
 import numpy as np
+from pytest import approx
+
+from integrator import EulerIntegrator, RK4Integrator
 
 
 def f(t, y):

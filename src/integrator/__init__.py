@@ -1,5 +1,8 @@
-import numpy as np
+from __future__ import annotations
+
 import abc
+
+import numpy as np
 
 
 class IntegratorBase(abc.ABC):
@@ -8,7 +11,7 @@ class IntegratorBase(abc.ABC):
         pass
 
     def integrate(self, f, t, init_y):
-        """Some description of the method.
+        r"""Some description of the method.
 
         Some more description of the method.
 
