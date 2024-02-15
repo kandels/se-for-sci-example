@@ -54,8 +54,3 @@ jobs:
       - run: echo "This will not run"
       - if: failure()
         run: echo "There was an error"
-        
-
-    
-
-      
