@@ -18,14 +18,23 @@ jobs:
 
   test:
     name: Run tests
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: ["ubuntu-latest", "windows-latest"]
+        python_version: ['3.9', '3.13'] #important to keep version in quotation as '3.10' if set 3.10 yaml treats this as number and installs python 3.1
+         #special cases
+        include:
+          - os: "macos-latest"
+            python-version: "3.11"
+    runs-on: ${{ matrix.os}} # github command
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
       - name: Set up python
         uses: actions/setup-python@v5 # in line comment
         with:
-          python-version: '3.13'
+          python-version:  ${{ matrix.python-version}}
+      - run: echo "Running in ${{ matrix.os}} with python ${{ matrix.python-version}}"
       - name: Install package
         run: pip install .[test]
       - name: Run pytest
