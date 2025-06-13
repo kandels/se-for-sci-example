@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  pull_request: #on pull request run ci
+  workflow_dispatch: # trigger manually
 
 # single line comment
 jobs:
