@@ -16,4 +16,12 @@ jobs:
       - name: My second step
         run: mkdir -z test
 
-    
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install package
+        run: pip install .[test]
+      - name: Run pytest
+        run: python -m pytest -v
+        
