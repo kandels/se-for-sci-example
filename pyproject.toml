@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "integrator-se4sci-sp24"
+name = "integrator-se4sci-25"
 version = "0.0.1"
 description = "Example Python package"
 readme = {file = "README.md", content-type = "text/markdown"}
